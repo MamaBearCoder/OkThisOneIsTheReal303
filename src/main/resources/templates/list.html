@@ -5,22 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/add">Add a Course</a><br />
+<a href="/add">Add a Task</a><br />
 <table>
     <tr>
-        <th>Title</th>
-        <th>Instructor</th>
-        <th>Credits</th>
-        <th>Actions</th>
+        <th>Task</th>
+        <th>Name</th>
+        <th>Due Date</th>
+        <th>Priority</th>
     </tr>
-    <tr th:each="course : ${courses}">
-        <td th:text="${course.title}"></td>
-        <td th:text="${course.instructor}"></td>
-        <td th:text="${course.credit}"></td>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.task}"></td>
+        <td th:text="${todo.name}"></td>
+        <td th:text="${todo.duedate}"></td>
+        <td th:text="${todo.priority}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${course.id})}">Update</a> -
-            <a th:href="@{detail/{id} (id=${course.id})}">Details</a> -
-            <a th:href="@{detail/{id} (id=${course.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${todo.id})}">Update</a> -
+            <a th:href="@{detail/{id} (id=${todo.id})}">Details</a> -
+            <a th:href="@{detail/{id} (id=${todo.id})}">Delete</a>
         </td>
     </tr>
 </table>
